@@ -1,0 +1,10 @@
+---
+
+server_port: 3000
+log_level: debug
+
+default_template: default
+
+templates:
+  - name: default
+    path: templates/default.templ
