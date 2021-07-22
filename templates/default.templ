@@ -1,0 +1,18 @@
+[Event Definition]
+Title: {{ .EventDefinitionTitle }}
+Description: {{ .EventDefinitionDescription }}
+Type: {{ .EventDefinitionType }}
+[Event]
+Timestamp: {{.Event.Timestamp}}
+Message: {{.Event.Message}}
+Source: {{.Event.Source}}
+Key: {{.Event.Key}}
+Priority: {{.Event.Priority}}
+Streams: {{range $value := .Event.Streams}}{{$value}} {{ end }}
+Source Streams: {{range $value := .Event.SourceStreams}}{{$value}} {{ end }}
+Timestamp Processing: {{.Event.Timestamp}}
+Timerange Start: {{.Event.TimerangeStart}}
+Timerange End: {{.Event.TimerangeEnd}}
+Fields:
+{{ range $key, $value := .Event.Fields }}  {{ $key }}: {{ $value }}
+{{ end }}
